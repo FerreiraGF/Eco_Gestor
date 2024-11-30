@@ -14,6 +14,7 @@ class MenuApp:
         # Adiciona os botões na aba lateral
         self.add_sidebar_button("Meu Perfil", self.exibir_meu_perfil)
         self.add_sidebar_button("Enviar Relatório", self.exibir_insercao_dados)
+        self.add_sidebar_button("Relatórios", self.exibir_relatorio)
         self.add_sidebar_button("Pontos de Coleta", self.exibir_pontos_coleta)
         self.add_sidebar_button("Certificado e Selo EcoGestor", self.exibir_certificado)
         self.add_sidebar_button("Sobre Nós", self.exibir_sobre_nos)
