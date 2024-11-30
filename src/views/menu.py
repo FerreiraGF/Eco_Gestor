@@ -1,5 +1,6 @@
 from tkinter import *
 import subprocess
+from pontos_coleta import agendamento_coleta 
 
 class MenuApp:
     def __init__(self, root):
@@ -14,8 +15,8 @@ class MenuApp:
         # Adiciona os botões na aba lateral
         self.add_sidebar_button("Meu Perfil", self.exibir_meu_perfil)
         self.add_sidebar_button("Enviar Relatório", self.exibir_insercao_dados)
+        self.add_sidebar_button("Agendar Coleta", self.exibir_pontos_coleta)
         self.add_sidebar_button("Relatórios", self.exibir_relatorio)
-        self.add_sidebar_button("Pontos de Coleta", self.exibir_pontos_coleta)
         self.add_sidebar_button("Certificado e Selo EcoGestor", self.exibir_certificado)
         self.add_sidebar_button("Sobre Nós", self.exibir_sobre_nos)
         self.add_sidebar_button("Contato", self.exibir_contato)
@@ -48,12 +49,7 @@ class MenuApp:
         subprocess.run(["python", "src/views/insercao_dados.py"])
         
     def exibir_pontos_coleta(self):
-        subprocess.run(["python", "src/views/pontos_coleta.py"])
+        agendamento_coleta()  # Chamar a função de agendamento de coleta
     
     def exibir_meu_perfil(self):
-        subprocess.run(["python", "src/views/meu_perfil.py"])
-
-if __name__ == "__main__":
-    root = Tk()
-    app = MenuApp(root)
-    root.mainloop()
+        subprocess.run(["python", "src/views/meuperfil.py"])

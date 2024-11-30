@@ -45,9 +45,3 @@ def login(parent):
     # Botão de login
     login_button = Button(janela, text="Login", font=("Arial", 12), bg="#2A5729", fg="white", command=verificar)
     login_button.pack(pady=20)
-
-# Exibir a janela
-if __name__ == "__main__":
-    root = Tk()
-    login(root)
-    root.mainloop()

@@ -84,6 +84,3 @@ def exibir_politica():
     )
     right_text.pack(side="right", anchor="e", padx=10)
     janela.mainloop()
-
-# Exibir a janela de Política de Privacidade diretamente
-exibir_politica()

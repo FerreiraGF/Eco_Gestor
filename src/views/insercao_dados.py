@@ -5,7 +5,7 @@ from tkinter import filedialog
 
 
 # Função para criar a interface
-def inserca_dados():
+def insercao_dados():
     # Criar a janela principal
     janela = Tk()
     janela.title("Inserção de Dados - Eco Gestor")
@@ -96,4 +96,4 @@ def inserca_dados():
     janela.mainloop()
 
 # Chamar a função para criar a interface
-inserca_dados()
+insercao_dados()

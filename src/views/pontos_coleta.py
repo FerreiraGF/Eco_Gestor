@@ -71,8 +71,7 @@ def agendar_coleta():
 def mostrar_lista_descartaveis():
     lista = [
         "Antenas", "Baterias", "Calculadoras eletrônicas", "Cabos e fios", "Câmeras de segurança", "Discos rígidos",
-        "Eletrodomésticos", "Equipamentos de áudio", "Equipamentos de medição eletrônica", "Equipamentos médicos eletrônicos",
-        "Equipamentos de rede", "Impressoras", "Jogos eletrônicos", "Leitores de DVD/Blu-ray", "Monitores", "Projetores",
+        "Equipamentos de áudio","Impressoras", "Jogos eletrônicos", "Leitores de DVD/Blu-ray", "Monitores", "Projetores",
         "Rádios", "Roteadores", "Sistemas de segurança eletrônicos", "Tablets", "Teclados e mouses", "Telefones celulares",
         "Televisores", "Videogames"
     ]
@@ -89,7 +88,7 @@ def agendamento_coleta():
     # Criar a janela principal
     janela = Tk()
     janela.title("Agendamento de Coleta")
-    janela.geometry("900x700") 
+    janela.geometry("900x850") 
     janela.configure(bg="#EAF7EC")
 
     # Título da página
@@ -202,6 +201,7 @@ def agendamento_coleta():
     # Rodapé
     footer_frame = Frame(janela, bg="#2A5729", height=120)
     footer_frame.pack(side="bottom", fill="x")
+    footer_frame.pack_propagate(False)
 
     left_text = Label(
         footer_frame,
@@ -230,6 +230,3 @@ def agendamento_coleta():
     right_text.pack(side="right", anchor="e", padx=10)
 
     janela.mainloop()
-
-# Chamar a função para criar a interface
-agendamento_coleta()
