@@ -1,10 +1,10 @@
 from tkinter import *
 
 def exibir_termos():
-    termos_window = Tk()
-    termos_window.title("Termos de Uso")
-    termos_window.geometry("1000x800")
-    termos_window.configure(bg="#EAF7EC")
+    janela = Tk()
+    janela.title("Termos de Uso")
+    janela.geometry("1000x900")
+    janela.configure(bg="#EAF7EC")
 
     termos_text = """
     Data de Vigência: 23 de setembro de 2024
@@ -45,13 +45,43 @@ def exibir_termos():
     brasileiro.
     """
 
-    termos_label = Label(termos_window, text=termos_text, font=("Arial", 12), bg="#EAF7EC", justify="left", anchor="nw")
+    termos_label = Label(janela, text=termos_text, font=("Arial", 12), bg="#EAF7EC", justify="left", anchor="nw")
     termos_label.pack(padx=20, pady=20, fill="both", expand=True)
 
-    ok_button = Button(termos_window, text="OK", font=("Arial", 14), command=termos_window.destroy, bg="#2A5729", fg="white", relief="flat")
+    ok_button = Button(janela, text="OK", font=("Arial", 14), command=janela.destroy, bg="#2A5729", fg="white", relief="flat")
     ok_button.pack(pady=20)
+    # Rodapé
+    footer_frame = Frame(janela, bg="#2A5729", height=120)
+    footer_frame.pack(side="bottom", fill="x")
 
-    termos_window.mainloop()
+    # Texto à esquerda do rodapé
+    left_text = Label(
+        footer_frame,
+        text="O Eco Gestor oferece uma solução inteligente para o descarte de resíduos eletrônicos, otimizando processos e garantindo a conformidade ambiental. Faça parte dessa luta ambiental conosco e ajude a mudar o planeta.",
+        font=("Arial", 9),
+        fg="white",
+        bg="#2A5729",
+        justify="left",
+        padx=20,
+        wraplength=350,  # Quebra automática de texto
+        anchor="w"
+    )
+    left_text.pack(side="left", anchor="w", padx=10)
+
+    # Texto à direita do rodapé
+    right_text = Label(
+        footer_frame,
+        text="Envie seu feedback para nós! Sua opinião nos ajuda a melhorar e transformar o planeta em um lugar melhor!\n eg_ouvidoria@ecogestor.com.br",
+        font=("Arial", 9),
+        fg="white",
+        bg="#2A5729",
+        justify="right",
+        padx=20,
+        wraplength=350,  # Quebra automática de texto
+        anchor="e"
+    )
+    right_text.pack(side="right", anchor="e", padx=10)
+    janela.mainloop()
 
 # Exibir a janela de Termos de Uso diretamente
 exibir_termos()
