@@ -14,6 +14,10 @@ def salvar_planilha(pl_cadastrados):
 def exibir_tela_alteracao_senha(email):
     def alterar_senha():
         nova_senha = nova_senha_entry.get()
+        confirmar_senha = confirmar_senha_entry.get()
+        if nova_senha != confirmar_senha:
+            messagebox.showerror("Erro", "As senhas não coincidem!")
+            return
         pl_cadastrados = carregar_planilha()
         pl_cadastrados.loc[pl_cadastrados['E-mail'] == email, 'Senha'] = nova_senha
         salvar_planilha(pl_cadastrados)
@@ -22,13 +26,16 @@ def exibir_tela_alteracao_senha(email):
 
     janela_alteracao_senha = Toplevel()
     janela_alteracao_senha.title("Alteração de Senha")
-    janela_alteracao_senha.geometry("400x200")
+    janela_alteracao_senha.geometry("400x400")
     janela_alteracao_senha.configure(bg="#EAF7EC")
 
     Label(janela_alteracao_senha, text="Alteração de Senha", font=("Arial", 16, "bold"), bg="#EAF7EC").pack(pady=20)
     Label(janela_alteracao_senha, text="Digite sua nova senha:", font=("Arial", 12), bg="#EAF7EC").pack(pady=5)
     nova_senha_entry = Entry(janela_alteracao_senha, show="*", width=30)
     nova_senha_entry.pack(pady=5)
+    Label(janela_alteracao_senha, text="Confirme sua nova senha:", font=("Arial", 12), bg="#EAF7EC").pack(pady=5)
+    confirmar_senha_entry = Entry(janela_alteracao_senha, show="*", width=30)
+    confirmar_senha_entry.pack(pady=5)
     Button(janela_alteracao_senha, text="Alterar Senha", font=("Arial", 12), bg="#2A5729", fg="white", command=alterar_senha).pack(pady=20)
 
 # Função para recuperar a senha

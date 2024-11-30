@@ -54,7 +54,7 @@ def criar_pagina_perfil():
     logout_button = Button(janela, text="Log Out", font=fonte_opcao, bg="#2A5729", fg="white", width=20, command=logout)
     logout_button.pack(pady=20)
 
-    # Rodapé com informações adicionais
+    # Rodapé
     footer_frame = Frame(janela, bg="#2A5729", height=120)
     footer_frame.pack(side="bottom", fill="x")
 
