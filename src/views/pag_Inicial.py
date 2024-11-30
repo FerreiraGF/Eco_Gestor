@@ -1,5 +1,6 @@
 from tkinter import *
 from menu import MenuApp
+from login import login  # Importar a função de login
 import subprocess
 
 def open_menu():
@@ -11,15 +12,22 @@ def open_menu():
 def abrir_cadastramento():
     subprocess.run(["python", "src/views/cadastro.py"])
 
+def abrir_login():
+    login(janela)  # Chamar a função de login com a janela principal como argumento
+
 # Configuração da janela principal
 janela = Tk()
 janela.title("Eco Gestor")
-janela.geometry("800x600")
+janela.geometry("1100x600")
 janela.configure(bg="#EAF7EC")  # Fundo verde claro
 
 # Botão de menu
 menu_button = Button(janela, text="≡", font=("Arial", 18), command=open_menu, bg="#2A5729", fg="white", relief="flat")
 menu_button.place(x=10, y=10)
+
+# Botão de login
+botao_login = Button(janela, text="Login", font=("Arial", 18, "bold"), command=abrir_login, bg="#2A5729", fg="white", relief="flat")
+botao_login.place(x=1000, y=10)
 
 # Cabeçalho
 header_frame = Frame(janela, bg="#EAF7EC")
@@ -41,13 +49,14 @@ subtitle_label = Label(
 subtitle_label.pack()
 
 # Botão "Quero fazer parte"
-join_button = Button(janela, text="Quero fazer parte", font=("Arial", 18), command=abrir_cadastramento, bg="#2A5729", fg="white", relief="flat")
-join_button.pack(pady=20)
-
-
+botão_juntar = Button(janela, text="Quero fazer parte", font=("Arial", 18), command=abrir_cadastramento, bg="#2A5729", fg="white", relief="flat")
+botão_juntar.pack(pady=20)
 
 # Área de reviews
-review_label = Label(janela, text="Review de nossos clientes", font=("Arial", 20, "bold"), fg="#2A5729", bg="#EAF7EC")
+reviews_frame = Frame(janela, bg="#EAF7EC")
+reviews_frame.pack(pady=20)
+
+review_label = Label(reviews_frame, text="O que nossos clientes dizem:", font=("Arial", 16, "bold"), fg="#2A5729", bg="#EAF7EC")
 review_label.pack(pady=20)
 
 review_frame = Frame(janela, bg="#EAF7EC")
@@ -103,4 +112,5 @@ right_text = Label(
 )
 right_text.pack(side="right", anchor="e", padx=10)
 
+# Exibir a janela
 janela.mainloop()
