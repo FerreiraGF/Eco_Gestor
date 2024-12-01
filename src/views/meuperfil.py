@@ -2,42 +2,35 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import font
 
-# Função para criar a interface de perfil
 def criar_pagina_perfil():
-    # Criar a janela principal
     janela = Tk()
     janela.title("Meu Perfil - EcoGestor")
-    janela.geometry("1000x600")  # Definir tamanho da janela
+    janela.geometry("1000x600")  
 
-    # Definir a fonte para o título e os textos
     fonte_titulo = font.Font(family="Arial", size=16, weight="bold")
     fonte_opcao = font.Font(family="Arial", size=12)
 
-    # Título "Meu Perfil" centralizado
     titulo = Label(janela, text="Meu Perfil", font=fonte_titulo, anchor="center")
     titulo.pack(pady=20, fill="x", anchor="center")
 
-    # Informações de perfil
     info_frame = Frame(janela)
     info_frame.pack(pady=20)
 
-    # Exibir as informações centralizadas
     nome_empresa = Label(info_frame, text="Empresa: Caio", font=("Arial", 12, "bold"))
-    nome_empresa.pack(pady=5, anchor="center")  # Centralizando a informação
+    nome_empresa.pack(pady=5, anchor="center") 
 
-    # Colocar CEP e CNPJ lado a lado, ambos centralizados
     cep = Label(info_frame, text="CEP: 2222222", font=("Arial", 12, "bold"))
-    cep.pack(pady=5, anchor="center")  # Centralizando a informação
+    cep.pack(pady=5, anchor="center")  
     
     cnpj = Label(info_frame, text="CNPJ: 1111111111", font=("Arial", 12, "bold"))
-    cnpj.pack(pady=5, anchor="center")  # Centralizando a informação
+    cnpj.pack(pady=5, anchor="center")  
 
-    # Informações adicionais
+    
     email = Label(info_frame, text="Email: unijorge@gmail.com", font=("Arial", 12, "bold"))
-    email.pack(pady=5, anchor="center")  # Centralizando a informação
+    email.pack(pady=5, anchor="center") 
 
     usuario_desde = Label(info_frame, text="Usuário desde: 19/02/2024", font=("Arial", 12, "bold"))
-    usuario_desde.pack(pady=5, anchor="center")  # Centralizando a informação
+    usuario_desde.pack(pady=5, anchor="center")  
 
     # Botões de ações
     botoes_frame = Frame(janela)
@@ -58,7 +51,6 @@ def criar_pagina_perfil():
     footer_frame = Frame(janela, bg="#2A5729", height=120)
     footer_frame.pack(side="bottom", fill="x")
 
-    # Texto à esquerda do rodapé
     left_text = Label(
         footer_frame,
         text="O Eco Gestor oferece uma solução inteligente para o descarte de resíduos eletrônicos, otimizando processos e garantindo a conformidade ambiental. Faça parte dessa luta ambiental conosco e ajude a mudar o planeta.",
@@ -67,12 +59,11 @@ def criar_pagina_perfil():
         bg="#2A5729",
         justify="left",
         padx=20,
-        wraplength=350,  # Quebra automática de texto
+        wraplength=350, 
         anchor="w"
     )
     left_text.pack(side="left", anchor="w", padx=10)
 
-    # Texto à direita do rodapé
     right_text = Label(
         footer_frame,
         text="Envie seu feedback para nós! Sua opinião nos ajuda a melhorar e transformar o planeta em um lugar melhor!\n eg_ouvidoria@ecogestor.com.br",
@@ -81,20 +72,17 @@ def criar_pagina_perfil():
         bg="#2A5729",
         justify="right",
         padx=20,
-        wraplength=350,  # Quebra automática de texto
+        wraplength=350,  
         anchor="e"
     )
     right_text.pack(side="right", anchor="e", padx=10)
 
-    # Exibir a janela
     janela.mainloop()
 
-# Função de Logout
 def logout():
     resposta = messagebox.showinfo("Log Out", "Logout realizado!")
     janela.quit()
 
-# Função de Excluir Conta com confirmação
 def excluir_conta():
     confirmacao = messagebox.askyesno("Confirmar Exclusão", "Tem certeza que deseja excluir sua conta?")
     
@@ -107,10 +95,10 @@ def excluir_conta():
         messagebox.showinfo("Cancelado", "Você não excluiu sua conta. Retornando para o seu perfil...")
         janela.quit()
 
-# Função de Alterar Senha
+
 def alterar_senha():
-    # Exibir a mensagem de confirmação simulando o envio do email
+    
     messagebox.showinfo("Alteração de Senha", "Enviamos um email para você com as instruções de recuperação de senha.")
 
-# Chamar a função para criar a página de perfil
+
 criar_pagina_perfil()

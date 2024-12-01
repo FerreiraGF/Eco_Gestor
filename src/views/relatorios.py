@@ -2,28 +2,23 @@ import tkinter as tk
 from tkinter import font
 import subprocess
 
-# Configuração da janela principal
+
 janela = tk.Tk()
 janela.title("Relatórios")
 janela.geometry("1045x600")
 
-# Fonte para os títulos
 fonte_titulo = font.Font(family="Arial", size=16, weight="bold")
 fonte_opcao = font.Font(family="Arial", size=12)
 
-# Título "Relatórios em Andamento" centralizado
 titulo = tk.Label(janela, text="Relatórios em Andamento", font=fonte_titulo, anchor="center")
 titulo.pack(pady=20, fill="x", anchor="center")
 
-# Frame para os relatórios
 relatorios_frame = tk.Frame(janela)
 relatorios_frame.pack(pady=30, anchor="w", padx=20)
 
-# Função para abrir o link do PDF no navegador
 def abrir_relatorio():
     subprocess.run(["python", "src/views/relatorios_multi.py"])
 
-# Títulos e Botões dos relatórios (em negrito e mais largos)
 relatorio1_titulo = tk.Label(relatorios_frame, text="Relatório do dia 23/11", font=("Arial", 12, "bold"), anchor="w")
 relatorio1_titulo.grid(row=0, column=0, pady=5, sticky="w")
 relatorio1_btn1 = tk.Button(relatorios_frame, text="Status: Concluído - Clique aqui para saber mais", font=fonte_opcao, bg="#2A5729", fg="white", 
@@ -34,7 +29,6 @@ relatorio1_btn1.grid(row=1, column=0, pady=10, sticky="ew")
 footer_frame = tk.Frame(janela, bg="#2A5729", height=120)
 footer_frame.pack(side="bottom", fill="x")
 
-# Texto à esquerda do rodapé
 left_text = tk.Label(
     footer_frame,
     text="O Eco Gestor oferece uma solução inteligente para o descarte de resíduos eletrônicos, otimizando processos e garantindo a conformidade ambiental. Faça parte dessa luta ambiental conosco e ajude a mudar o planeta.",
@@ -48,7 +42,6 @@ left_text = tk.Label(
 )
 left_text.pack(side="left", anchor="w", padx=10)
 
-# Texto à direita do rodapé
 right_text = tk.Label(
     footer_frame,
     text="Envie seu feedback para nós! Sua opinião nos ajuda a melhorar e transformar o planeta em um lugar melhor!\n eg_ouvidoria@ecogestor.com.br",
@@ -62,5 +55,4 @@ right_text = tk.Label(
 )
 right_text.pack(side="right", anchor="e", padx=10)
 
-# Exibir a janela
 janela.mainloop()

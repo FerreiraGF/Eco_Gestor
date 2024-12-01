@@ -25,7 +25,6 @@ def exibir_faq():
     Você pode entrar em contato com o suporte do Eco Gestor pelo e-mail: ecogestor@org.com.br.
     """
 
-    # Frame para o conteúdo principal
     content_frame = Frame(janela, bg="#EAF7EC")
     content_frame.pack(padx=20, pady=20, fill="both", expand=True)
 
@@ -39,7 +38,6 @@ def exibir_faq():
     footer_frame = Frame(janela, bg="#2A5729", height=120)
     footer_frame.pack(side="bottom", fill="x")
 
-    # Texto à esquerda do rodapé
     left_text = Label(
         footer_frame,
         text="O Eco Gestor oferece uma solução inteligente para o descarte de resíduos eletrônicos, otimizando processos e garantindo a conformidade ambiental. Faça parte dessa luta ambiental conosco e ajude a mudar o planeta.",
@@ -48,12 +46,11 @@ def exibir_faq():
         bg="#2A5729",
         justify="left",
         padx=20,
-        wraplength=350,  # Quebra automática de texto
+        wraplength=350,
         anchor="w"
     )
     left_text.pack(side="left", anchor="w", padx=10)
 
-    # Texto à direita do rodapé
     right_text = Label(
         footer_frame,
         text="Envie seu feedback para nós! Sua opinião nos ajuda a melhorar e transformar o planeta em um lugar melhor!\n eg_ouvidoria@ecogestor.com.br",
@@ -62,12 +59,11 @@ def exibir_faq():
         bg="#2A5729",
         justify="right",
         padx=20,
-        wraplength=350,  # Quebra automática de texto
+        wraplength=350, 
         anchor="e"
     )
     right_text.pack(side="right", anchor="e", padx=10)
 
     janela.mainloop()
 
-# Exibir a janela de FAQ diretamente
 exibir_faq()
