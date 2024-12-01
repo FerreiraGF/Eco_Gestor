@@ -84,3 +84,6 @@ def exibir_politica():
     )
     right_text.pack(side="right", anchor="e", padx=10)
     janela.mainloop()
+
+if __name__ == "__main__":
+    exibir_politica()

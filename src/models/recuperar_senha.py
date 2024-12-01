@@ -65,6 +65,6 @@ def recuperar_senha():
 # Testar a função de recuperação de senha
 if __name__ == "__main__":
     root = Tk()
-    root.withdraw()  # Ocultar a janela principal
+    root.withdraw()  
     recuperar_senha()
     root.mainloop()

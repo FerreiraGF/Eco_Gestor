@@ -3,13 +3,13 @@ import subprocess
 from pontos_coleta import agendamento_coleta 
 
 class MenuApp:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Menu Lateral")
-        self.root.geometry("150x500")
+    def __init__(self, janela):
+        self.janela = janela
+        self.janela.title("Menu Lateral")
+        self.janela.geometry("150x500")
 
         # Cria o frame da aba lateral
-        self.sidebar = Frame(self.root, width=200, bg="#EAF7EC", height=500, relief='sunken', borderwidth=2)
+        self.sidebar = Frame(self.janela, width=200, bg="#EAF7EC", height=500, relief='sunken', borderwidth=2)
         self.sidebar.pack(expand=False, fill='both', side='left', anchor='nw')
 
         # Adiciona os botões na aba lateral
