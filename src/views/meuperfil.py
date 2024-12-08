@@ -79,21 +79,17 @@ def criar_pagina_perfil():
 
     janela.mainloop()
 
-    def logout():
+def logout():
         resposta = messagebox.showinfo("Log Out", "Logout realizado!")
-        janela.quit()
-
-    def excluir_conta():
-        confirmacao = messagebox.askyesno("Confirmar Exclusão", "Tem certeza que deseja excluir sua conta?")
     
-        if confirmacao:
-        # Se o usuário confirmar, exibe a mensagem de despedida
-            messagebox.showinfo("Exclusão", "Uma pena te ver ir embora. Se isso for um erro, favor contatar nosso suporte.\n\nA equipe EcoGestor agradece sua parceria.")
-            janela.quit()
-        else:
-        # Se o usuário cancelar a exclusão, retorna para o perfil
-            messagebox.showinfo("Cancelado", "Você não excluiu sua conta. Retornando para o seu perfil...")
-            janela.quit()
+def excluir_conta():
+    confirmacao = messagebox.askyesno("Confirmar Exclusão", "Tem certeza que deseja excluir sua conta?")
+    if confirmacao:
+    # Se o usuário confirmar, exibe a mensagem de despedida
+        messagebox.showinfo("Exclusão", "Uma pena te ver ir embora. Se isso for um erro, favor contatar nosso suporte.\n\nA equipe EcoGestor agradece sua parceria.")
+    else:
+    # Se o usuário cancelar a exclusão, retorna para o perfil
+        messagebox.showinfo("Cancelado", "Você não excluiu sua conta. Retornando para o seu perfil...")
 
 
 def alterar_senha():
